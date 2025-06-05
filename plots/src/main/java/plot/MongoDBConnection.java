@@ -17,7 +17,7 @@ public class MongoDBConnection {
     private MongoDatabase database;
 
     public MongoDBConnection() {
-        mongoClient = MongoClients.create("mongodb://root:example@localhost:27017");  // /admin Connect to MongoDB
+        mongoClient = MongoClients.create("mongodb://root:example@localhost:27018");  // /admin Connect to MongoDB
         database = mongoClient.getDatabase("self_development");// creates by default
     }
 
