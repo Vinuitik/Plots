@@ -65,12 +65,12 @@ public class SelfDevelopmentTracker extends JFrame {
 
         // Configure date axis for both charts
         DateAxis dateAxis1 = new DateAxis("Date");
-        dateAxis1.setDateFormatOverride(new SimpleDateFormat("MM/dd HH:mm"));
+        dateAxis1.setDateFormatOverride(new SimpleDateFormat("yyyy-MM-dd"));
         XYPlot plot1 = obsidianChart.getXYPlot();
         plot1.setDomainAxis(dateAxis1);
 
         DateAxis dateAxis2 = new DateAxis("Date");
-        dateAxis2.setDateFormatOverride(new SimpleDateFormat("MM/dd HH:mm"));
+        dateAxis2.setDateFormatOverride(new SimpleDateFormat("yyyy-MM-dd"));
         XYPlot plot2 = leetcodeChart.getXYPlot();
         plot2.setDomainAxis(dateAxis2);
 
