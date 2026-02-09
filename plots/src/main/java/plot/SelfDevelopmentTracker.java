@@ -3,13 +3,16 @@ package plot;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.DateAxis;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import org.bson.Document;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -59,6 +62,17 @@ public class SelfDevelopmentTracker extends JFrame {
                 PlotOrientation.VERTICAL,
                 true, true, false
         );
+
+        // Configure date axis for both charts
+        DateAxis dateAxis1 = new DateAxis("Date");
+        dateAxis1.setDateFormatOverride(new SimpleDateFormat("MM/dd HH:mm"));
+        XYPlot plot1 = obsidianChart.getXYPlot();
+        plot1.setDomainAxis(dateAxis1);
+
+        DateAxis dateAxis2 = new DateAxis("Date");
+        dateAxis2.setDateFormatOverride(new SimpleDateFormat("MM/dd HH:mm"));
+        XYPlot plot2 = leetcodeChart.getXYPlot();
+        plot2.setDomainAxis(dateAxis2);
 
         // Create chart panels and add them to the main frame
         ChartPanel obsidianChartPanel = new ChartPanel(obsidianChart);
